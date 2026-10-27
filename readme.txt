@@ -1,0 +1,201 @@
+DayZ Nasdara Modular Loot System Files XML Mod Changelog & Terms Of Use
+
+This batch created 261026, with update 1.30 files.
+
+-------------------------------------
+
+These XML files will make various changes to your Nasdara Community Server, without editing the vanilla files:
+
+-------------------------------------
+
+Most items spawn pristine and undamaged.
+
+5 Second login / logout. 
+
+8 hour server restarts with warning message. 
+
+Complete Vehicles with loot. 
+
+More Vehicles. 
+
+More Weapons. 
+
+Weapons will spawn with attachments & mags. 
+
+Full Mags. 
+
+More Mags. 
+
+More boxed ammo, less ,oose ammo.
+
+More Food.
+
+More Drinks.
+
+More Meds. 
+
+More Tools & Building Supplies. 
+
+-------------------------------------
+
+This is scalespeeder gamings modular loot / CLE modding system, which is designed to be update independant, simple to install  and highly customizable.
+
+Limited Testing on PC Nasdara Local Server DAYZ  Version 1.30 Oct 2026.
+
+Designed to work with PC, PlayStation & Xbox DayZ Community Servers.
+
+Created by @scalespeeder. Please report bugs & errors to scalespeeder@gmail.com with screenshots.
+
+TERMS OF USE
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
+THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Using these modded xml files could break the functioning of your DAYZ server, requiring a reinstall that would wipe
+all player progress.
+
+Using these modded xml files neccessitates increased regular restarts to prevent server crashing.
+
+It is suggested you thoroughly test your server after applying these files to ensure proper
+functioning of your server.
+
+-----------------------
+
+PLEASE READ THE INSTRUCTIONS ON HOW TO INSTALL THESE FILES
+
+To download the files from Github click the green "code" button, then "download zip" then extract the files to your local PC.
+
+-----------------------
+
+Stop your server.
+
+On console you already have a "custom" folder inside the mission folder on your server. ON PC YOU MUST MAKE ONE, eg: mpmissions\dayzOffline.nasdara\custom
+
+Now upload the ALL the files from the Github / Mega.
+
+Next open up your vanilla cfgeconomycore.xml, and near the bottom, above the closing
+
+</economycore>
+
+tag,
+
+paste this on your Nasdara Server:
+
+	<ce folder="custom">
+	
+	<file name="admin-server-restart-and-message-messages.xml" type="messages" />
+	<file name="admin-short-login-pristine-items-globals.xml" type="globals" />
+	
+	<file name="food-nasdara-more-food-and-drinks-types.xml" type="types" />
+	
+	<file name="meds-boosted-types.xml" type="types" />
+	
+	<file name="tools-boosted-misc-types.xml" type="types" />
+	
+	<file name="guns-complete-pristine-spawnabletypes.xml" type="spawnabletypes" />
+	<file name="guns-nasdara-boosted-full-mags-types.xml" type="types" />
+	<file name="guns-boosted-nasdara-types.xml" type="types" />
+	<file name="guns-nasdara-boosted-box-ammo-less-loose-types.xml" type="types" />
+	
+	<file name="Veh-Truck_01_Covered-complete-nasdara-building-supplies-cfgspawnabletypes.xml" type="spawnabletypes" />
+	<file name="Veh-CivilianSedan-complete-with-FRod-cfgspawnabletypes.xml" type="spawnabletypes" />
+   	<file name="Veh-Sedan_02-complete-with-Farming-cfgspawnabletypes.xml" type="spawnabletypes" />
+	<file name="Veh-OffroadHatchback-complete-with-M4A1-cfgspawnabletypes.xml" type="spawnabletypes" />
+	<file name="Veh-Hatchback_02-complete-with-Hunting-cfgspawnabletypes.xml" type="spawnabletypes" />
+	<file name="Veh-Offroad_02-complete-with-weapons-cfgspawnabletypes.xml" type="spawnabletypes" />
+	<file name="Veh-Motorbike_01-02-Complete-cfgspawnabletypes.xml" type="spawnabletypes" />
+	<file name="Veh-Boat_01-complete-cfgspawnabletypes.xml" type="spawnabletypes" />
+	
+	<file name="veh-more-VehicleCivilianSedan-events.xml" type="events" />
+	<file name="veh-more-VehicleHatchback02-events.xml" type="events" />
+	<file name="veh-more-VehicleOffroad02-events.xml" type="events" />
+	<file name="veh-more-VehicleOffroadHatchback-events.xml" type="events" />
+	<file name="veh-more-VehicleSedan02-events.xml" type="events" />
+	<file name="veh-more-VehicleTruck01-events.xml" type="events" />
+	<file name="veh-more-motorbikes-events.xml" type="events" />
+	</ce>
+	
+Save the file.
+
+Upload where necessary.
+
+If you don't want to use a particular file, simple delete the relevant line or comment it out with <!-- at the beggining and --> at the end.
+
+If you want the options to have complete vehicles but no loot, see the relevent tutorials at https://www.youtube.com/playlist?list=PL_QA4GNmiCzdl82RIOZvdFveq5_bDBrPY
+	
+Vailidate your edited files to check you haven't made any mistakes with https://www.xmlvalidation.com/
+
+Restart your server & changes should start to take effect. How quickly will depend on the population of your server.
+
+----------
+
+Additional Settings:
+
+Ensure cfggameplay.json is activated in your server settings.
+
+For Nitrado Console Servers it's a toggle in the "Settings, General" part of your Server Dashboard.
+
+For PC Nitrado Servers it's a toggle in the "Settings, General" part of the dashboard AND the Expert Settings (serverDZ.cfg) file.
+
+For other server providers it'll probably be in your dashboard and / or your serverDZ.cfg file.
+
+Build Anywhere:
+
+Open your servers cfggameplay.json file.
+
+Replace the vanilla "BaseBuildingData" section with this:
+
+"BaseBuildingData":
+	{
+		"HologramData":
+		{
+			"disableIsCollidingBBoxCheck": true,
+			"disableIsCollidingPlayerCheck": true,
+			"disableIsClippingRoofCheck": true,
+			"disableIsBaseViableCheck": true,
+			"disableIsCollidingGPlotCheck": true,
+			"disableIsCollidingAngleCheck": true,
+			"disableIsPlacementPermittedCheck": true,
+			"disableHeightPlacementCheck": true,
+			"disableIsUnderwaterCheck": true,
+			"disableIsInTerrainCheck": true,
+			"disableColdAreaBuildingCheck": true,
+			"disallowedTypesInUnderground": ["FenceKit","TerritoryFlagKit","WatchtowerKit"]
+		},
+		"ConstructionData":
+		{
+			"disablePerformRoofCheck": true,
+			"disableIsCollidingCheck": true,
+			"disableDistanceCheck": true,
+			 "disableItemFalling": false,
+			"disableDropAttachmentsOnFall": false,
+			"disableRefundMaterialsOnFall": false
+		}
+	},
+	
+Navigation Aids Don't Require Items In Inventory:
+
+Replace your vanilla "MapData" section with this:
+
+"MapData":
+	{
+		"ignoreMapOwnership": true,
+		"ignoreNavItemsOwnership": true,
+		"displayPlayerPosition": true,
+		"displayNavInfo": true
+	},
+	
+(Please note that unless a console has a keyboard plugged, so you can press m, console players will have to find a map to use this feature.)
+
+save and upload if necessary, restart server.
+
+For Password Changes, Whitelist, Passage Of Time (How Long Night & Day Are) & Other Common Settings, See This Video:
+
+https://youtu.be/xVrcG6bi2hE
+
+Dominus vobiscum! scalespeeder
+
+GOOD LUCK!
